@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mir Aafaq Saadat | Cloud Computing Student & Aspiring Cloud Intern</title>
+<meta name="description" content="Portfolio of Mir Aafaq Saadat, a third-year BTech Computer Science student specializing in cloud computing, seeking internships in AWS, cloud and software development. Also available for small projects.">
+<meta name="theme-color" content="#6366f1">
+<meta name="author" content="Mir Aafaq Saadat">
+<meta property="og:title" content="Mir Aafaq Saadat | Cloud Computing Student">
+<meta property="og:description" content="Third-year BTech CSE student specializing in cloud computing. Projects in AWS serverless, IoT and cloud architecture.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="bg" aria-hidden="true"><i></i><i></i><i></i></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="window">
+  <div class="titlebar">
+    <div class="lights" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="title" aria-hidden="true">aafaq@portfolio ~ cloud</div>
+    <button class="theme" id="theme" type="button" aria-label="Switch colour theme"></button>
+  </div>
+  <nav class="tabs" role="tablist" aria-label="Portfolio sections">
+    <button class="tab" role="tab" id="tab-home" aria-controls="home" aria-selected="true">Home</button>
+    <button class="tab" role="tab" id="tab-projects" aria-controls="projects" aria-selected="false" tabindex="-1">Projects</button>
+    <button class="tab" role="tab" id="tab-skills" aria-controls="skills" aria-selected="false" tabindex="-1">Skills</button>
+    <button class="tab" role="tab" id="tab-focus" aria-controls="focus" aria-selected="false" tabindex="-1">Services</button>
+    <button class="tab" role="tab" id="tab-certifications" aria-controls="certifications" aria-selected="false" tabindex="-1">Certifications</button>
+    <button class="tab" role="tab" id="tab-contact" aria-controls="contact" aria-selected="false" tabindex="-1">Contact</button>
+  </nav>
+
+  <main id="main">
+
+  <section class="panel" id="home" role="tabpanel" aria-labelledby="tab-home">
+    <p class="status-dot">Open to internships</p>
+    <h1>Mir Aafaq Saadat</h1>
+    <p class="typed">I'm a <strong><span id="typed">cloud computing student</span></strong><span class="caret" aria-hidden="true"></span></p>
+    <p class="lede">Third-year BTech Computer Science student specializing in cloud computing. I build AWS projects and small hardware prototypes.</p>
+    <p class="intro">I'm looking for an <mark>internship in cloud, AWS or software development</mark>, where I can contribute, learn from experienced engineers and work on real systems. I also take on <mark>small projects for clients</mark> alongside my studies.</p>
+    <div class="actions">
+      <a class="btn primary" href="#contact" data-tab="contact">Get in touch</a>
+      <a class="btn" href="#projects" data-tab="projects">See my projects</a>
+      <a class="btn" href="#focus" data-tab="focus">Services</a>
+    </div>
+    <div class="facts cyc">
+      <div><b>Studying</b><span>BTech Computer Science, 3rd year</span></div>
+      <div><b>Specialization</b><span>Cloud computing</span></div>
+      <div><b>Based in</b><span>India</span></div>
+    </div>
+  </section>
+
+  <section class="panel" id="projects" role="tabpanel" aria-labelledby="tab-projects">
+    <h2>Projects</h2>
+
+    <article class="project">
+      <h3>CloudDrive: Serverless Cloud Storage</h3>
+      <p class="status">Personal project. Frontend runs locally during development.</p>
+      <p>A file storage app with a React and Vite frontend and a serverless AWS backend. Users sign in, upload files directly to S3, list their files and delete them.</p>
+      <ul>
+        <li>Authentication through Amazon Cognito (hosted UI, OIDC).</li>
+        <li>Uploads use S3 pre-signed URLs, so files go straight to S3 instead of through the API. This avoids API Gateway payload limits.</li>
+        <li>Three AWS Lambda functions (Node.js) handle upload URL generation, file listing and deletion, with file metadata stored in DynamoDB.</li>
+        <li>Each user's files are kept under their own S3 prefix and filtered per user in the database.</li>
+        <li>Known trade-off: the listing function uses a DynamoDB <code>Scan</code>. A larger version would use a <code>Query</code> on a global secondary index.</li>
+      </ul>
+      <ul class="tags cyc" aria-label="Technologies"><li>React</li><li>Vite</li><li>Lambda</li><li>API Gateway</li><li>S3</li><li>Cognito</li><li>DynamoDB</li></ul>
+      <div class="links"><a href="https://github.com/aafaqsaadat/CloudDrive" target="_blank" rel="noopener noreferrer">View on GitHub</a></div>
+    </article>
+
+    <article class="project">
+      <h3>ESP32 Sound Detector Band for Hearing-Impaired Users</h3>
+      <p class="status">Assistive IoT prototype. Documented in a project report.</p>
+      <p>An ESP32-based wearable concept that detects sounds in the environment and alerts the wearer through vibration, so people who are deaf or hard of hearing can notice important sounds around them.</p>
+      <ul>
+        <li>Approach: microphone or sound sensor input, threshold-based sound detection on an ESP32, and a vibration motor for feedback.</li>
+        <li>Circuit design and simulation with Proteus.</li>
+        <li>The GitHub repository currently contains the project report (PDF) and a short README. Firmware source code is not published there yet.</li>
+      </ul>
+      <ul class="tags cyc" aria-label="Technologies"><li>ESP32</li><li>Sound sensor</li><li>Vibration motor</li><li>Embedded</li><li>Proteus</li></ul>
+      <div class="links">
+        <a href="https://github.com/aafaqsaadat/esp32-sound-detector-for-deaf" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        <a href="https://github.com/aafaqsaadat/esp32-sound-detector-for-deaf/blob/main/ESP32%20PROJECT.pdf" target="_blank" rel="noopener noreferrer">Project report (PDF)</a>
+      </div>
+    </article>
+
+    <article class="project">
+      <h3>Smart Campus Event Management System on AWS</h3>
+      <p class="status">Academic cloud architecture project. Not a live deployment.</p>
+      <p>A design for managing campus events and sending notifications, built as a coursework exercise in planning a multi-service AWS architecture.</p>
+      <ul>
+        <li>Compute and notifications: Amazon EC2 and AWS Lambda.</li>
+        <li>Storage and data: Amazon S3 and Amazon RDS.</li>
+        <li>Access and networking: AWS IAM and Amazon VPC.</li>
+      </ul>
+      <ul class="tags cyc" aria-label="Technologies"><li>EC2</li><li>S3</li><li>RDS</li><li>IAM</li><li>VPC</li><li>Lambda</li></ul>
+    </article>
+  </section>
+
+  <section class="panel" id="skills" role="tabpanel" aria-labelledby="tab-skills">
+    <h2>Skills</h2>
+    <p class="meta" style="margin-bottom:1.5rem">I'm a student, so these reflect coursework and project experience, not years in industry.</p>
+    <dl class="rows cyc">
+      <div><dt>Cloud and AWS</dt><dd>Hands-on experience: S3, Lambda, API Gateway, Cognito, DynamoDB. Familiar with: EC2, RDS, IAM, VPC.</dd></div>
+      <div><dt>Programming languages</dt><dd>Familiar with C, C++, Python, Java and JavaScript. Currently developing depth in Python and JavaScript.</dd></div>
+      <div><dt>Web development</dt><dd>HTML, CSS, JavaScript. Hands-on experience with React and Vite.</dd></div>
+      <div><dt>Databases</dt><dd>Familiar with SQL. Hands-on experience with DynamoDB metadata design.</dd></div>
+      <div><dt>Networking and Linux</dt><dd>Familiar with networking fundamentals and the Linux command line.</dd></div>
+      <div><dt>IoT and embedded</dt><dd>ESP32 prototyping, sensor input and vibration output, circuit simulation in Proteus.</dd></div>
+      <div><dt>Automation and AI tools</dt><dd>Currently developing: workflow automation with n8n and Workato, prompt engineering.</dd></div>
+      <div><dt>Developer tools</dt><dd>Git and GitHub.</dd></div>
+    </dl>
+  </section>
+
+  <section class="panel" id="focus" role="tabpanel" aria-labelledby="tab-focus">
+    <h2>Services</h2>
+    <p>Alongside my studies, I also offer these services for small projects. I'm a student, so I keep scope realistic and tell you up front what I can and can't deliver.</p>
+    <p class="meta" style="margin-bottom:1.5rem">I'm also looking for internships and learning opportunities.</p>
+    <ul class="plain cyc">
+      <li><strong>AWS and cloud application projects</strong><span>Building small applications on AWS, with guidance from a team.</span></li>
+      <li><strong>Basic cloud architecture and service integration</strong><span>Connecting services such as S3, Lambda, API Gateway and DynamoDB.</span></li>
+      <li><strong>Responsive web interfaces</strong><span>Clean, accessible pages and simple React front ends.</span></li>
+      <li><strong>IoT and ESP32 prototypes</strong><span>Sensor-based prototypes and circuit simulation.</span></li>
+      <li><strong>Basic automation workflows</strong><span>Connecting tools with n8n-style workflows.</span></li>
+      <li><strong>Technical project documentation</strong><span>Clear READMEs and write-ups of design decisions and trade-offs.</span></li>
+    </ul>
+    <div class="actions">
+      <a class="btn primary" href="mailto:aafaqsaadat@gmail.com?subject=Project%20enquiry">Discuss a project</a>
+    </div>
+  </section>
+
+  <section class="panel" id="certifications" role="tabpanel" aria-labelledby="tab-certifications">
+    <h2>Certifications and learning</h2>
+    <!--
+      TO EDIT: each <li> is one credential. To add a date or link, add after the issuer <span>:
+      <span> &middot; Issued Mon YYYY</span>   and   <a href="YOUR_CREDENTIAL_URL" target="_blank" rel="noopener noreferrer">View credential</a>
+      Only add dates and links you have checked on your own certificates.
+    -->
+    <ul class="plain cyc">
+      <li><strong>AWS Cloud Technical Essentials</strong><span>Amazon Web Services</span></li>
+      <li><strong>Hands-On Automation with n8n &amp; Workato</strong><span>Coursera</span></li>
+      <li><strong>Prompt Engineering for ChatGPT</strong><span>Vanderbilt University</span></li>
+      <li><strong>AI SEO with Traffic From LLM SEO, GEO, AEO</strong><span>Alex Genadinik</span></li>
+    </ul>
+    <p class="meta" style="margin-top:1.5rem">I have also earned digital learning badges on AWS Skill Builder. These are course badges, not AWS professional certifications.</p>
+  </section>
+
+  <section class="panel" id="contact" role="tabpanel" aria-labelledby="tab-contact">
+    <h2>Contact</h2>
+    <p>I'm looking for internships in cloud computing, AWS and software development. If you're hiring or know of an opening, I'd be glad to hear from you.</p>
+    <p><a class="mail" href="mailto:aafaqsaadat@gmail.com">aafaqsaadat@gmail.com</a></p>
+    <div class="actions">
+      <a class="btn primary" href="mailto:aafaqsaadat@gmail.com">Send an email</a>
+      <button class="btn" id="copy" type="button">Copy email</button>
+      <a class="btn" href="https://www.linkedin.com/in/aafaqsaadat/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a class="btn" href="https://github.com/aafaqsaadat" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <!-- TO ADD RESUME: remove the word "hidden" and replace YOUR_RESUME_URL_HERE with a link to your PDF (for example resume.pdf uploaded to this repo). -->
+      <a class="btn" href="YOUR_RESUME_URL_HERE" target="_blank" rel="noopener noreferrer" hidden>Download résumé</a>
+    </div>
+  </section>
+
+  </main>
+</div>
+
+<footer>&copy; <span id="year">2026</span> Mir Aafaq Saadat</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
